@@ -88,12 +88,12 @@ function checkNotAuthenticated(req, res, next) {
 }
 
 app.get('/', (req ,res)=>{
-  var lists;
+
   blog.find({ })
       .then((data)=>{
           console.log(data);
-        var blogs=data;
-         
+      
+          res.render('home.ejs',{blog:blogs});   
          
       })
       
@@ -110,7 +110,7 @@ app.get('/', (req ,res)=>{
     console.log('error: ',error);
 })
 
-      res.render('home.ejs',{blog:blogs,test:lists});
+      
 });
 
 app.post('/blog',(req,res)=>{
