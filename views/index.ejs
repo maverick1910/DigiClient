@@ -1,0 +1,16 @@
+  
+<h1>Hi <%= name %></h1>
+<form action="/logout?_method=DELETE" method="POST">
+  <button type="submit">Log Out</button>
+  
+</form>
+<form action="/blog" method="POST">
+<label>Content</label><input name="content" type="text">
+<button type="submit">Add</button></form>
+
+<form action="/client" method="POST" enctype="multipart/form-data">
+    <label>Content</label><input name="content"type="text">
+    <label for="image">Upload Image</label> 
+                <input type="file" id="image" 
+                       name="image" value="" required>
+    <button type="submit"></button></form>
