@@ -4,13 +4,20 @@
   <button type="submit">Log Out</button>
   
 </form>
-<form action="/blog" method="POST">
-<label>Content</label><input name="content" type="text">
-<button type="submit">Add</button></form>
+<h1>Blog</h1><br>
+<form action="/blog" method="POST" >
+  <label>Title</label><input name="title" type="text" required>
+  <br>
+<label>Content</label><input name="content" type="text" required>
+<br>
 
+<button type="submit">Add</button></form>
+<br>
 <form action="/client" method="POST" enctype="multipart/form-data">
-    <label>Content</label><input name="content"type="text">
-    <label for="image">Upload Image</label> 
+    <label>Title</label><input name="title"type="text">
+   <br> <label>Content</label><input name="content"type="text">
+    <br><label for="image">Upload Image:(.png)</label> 
                 <input type="file" id="image" 
-                       name="image" value="" required>
+                       name="image" value="" >
+                       <br>
     <button type="submit"></button></form>

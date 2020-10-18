@@ -34,8 +34,8 @@ const hash = bcrypt.hashSync(process.env.PASSWORD, 10);
 const users = []
 users.push({
   id: Date.now().toString(),
-  name: 'Jhon21',
-  email: 'Jhon@gmail.com',
+  name: process.env.NAME,
+  email: process.env.EMAIL,
   password: hash,
 });
 
@@ -91,31 +91,34 @@ app.get('/', (req ,res)=>{
 
   blog.find({ })
       .then((data)=>{
+        blogs=data;
           console.log(data);
-      
-          res.render('home.ejs',{blog:blogs});   
+          test.find({})
+  .then((data)=>{
+    console.log('test',data);
+    res.render('home.ejs',{blog:blogs,test:data});
+})
+.catch((error)=>{
+    console.log('error: test',error);
+})
+     
+         
          
       })
       
       .catch((error)=>{
-          console.log('error: ',error);
+          console.log('error: blog',error);
       })
-      
-  test.find({})
-  .then((data)=>{
-    console.log(data);
-   lists=data;
-})
-.catch((error)=>{
-    console.log('error: ',error);
-})
+ 
+
+  
 
       
 });
 
 app.post('/blog',(req,res)=>{
   const data={
-       title:req.body.content,
+       title:req.body.title,
     content:req.body.content,
     
     

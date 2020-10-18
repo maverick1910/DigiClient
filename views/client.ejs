@@ -1,0 +1,9 @@
+ <% for(var log=0;log<(test.length) ;log++){%>
+        <h1>
+            <%= test[log].title %></h1>
+            <h1>
+               <%= test[log].content %></h1>
+               
+               <img src="data:test[log]/<%=test[log].img.contentType%>;base64, 
+               <%=test[log].img.data.toString('base64')%>"> 
+            <% } %>    
