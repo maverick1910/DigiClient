@@ -6,10 +6,9 @@
   border-radius: 25px;
 }
 #back{
-    padding-right: 50px;
-    margin-top: 40%;
-    width: 1000%;
-    border-radius:25px ;
+  padding-right: 30px;
+  margin-left: -40%;
+  border-radius: 25px;
     
 }
 body::-webkit-scrollbar {
@@ -25,9 +24,8 @@ body::-webkit-scrollbar {
     background-color: darkgrey;
     outline: 1px solid;
     background: -webkit-linear-gradient(left, #c70074, #43026e 70%);;
+    box-shadow: 20px 20px 50px #00d2c6, 
+    -30px -30px 60px #00ffff;
    
   }
-  {
-  box-shadow: 20px 20px 50px #00d2c6, 
-  -30px -30px 60px #00ffff;
-  }
+  
