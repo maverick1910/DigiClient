@@ -83,8 +83,32 @@
         <!--================Blog Main Area =================-->
         <section class="blog_main_area p_100">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">
+                <div class="row">  
+                    <div class="col-lg-9">  
+                        <% for(var log=0;log<(blog.length) ;log++){%>
+                        <div class="blog_main_inner">
+                            <div class="blog_main_item">
+                                <div class="blog_img">
+                                    <img class="img-fluid" src="data:blog[log]/<%=blog[log].img.contentType%>;base64, 
+                                    <%=blog[log].img.data.toString('base64')%>" alt="">
+                                    <div class="blog_date">
+                                        <h4><%= blog[log].date.day %></h4>
+                                        <h5><%= blog[log].date.month %>, <%= blog[log].date.year %></h5>
+                                    </div>
+                                </div>
+                                <div class="blog_text">
+                                    <a href="single-blog.ejs"><h4><%= blog[log].title %></h4></a>
+                                    <div class="blog_author">
+                                        <a href="#"><%= blog[log].author %></a>
+                                        <a href="#"><%= blog[log].category %></a>
+                                    </div>
+                                    <p><%= blog[log].content %> </p>
+                                    <a class="more_btn" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <% } %>  
                         <div class="blog_main_inner">
                             <div class="blog_main_item">
                                 <div class="blog_img">

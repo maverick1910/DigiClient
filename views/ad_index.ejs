@@ -1,0 +1,23 @@
+  
+<h1>Hi <%= name %></h1>
+<form action="/logout?_method=DELETE" method="POST">
+  <button type="submit">Log Out</button>
+  
+</form>
+<h1>Blog</h1><br>
+<form action="/blog" method="POST" enctype="multipart/form-data">
+    <label>Title:</label><input name="title"type="text">
+   <br><br> <p>Content:</p><textarea id="content" cols="86" rows ="20" name="content" placeholder="Add your content here....."></textarea>
+    <br><br><label for="image">Upload Image:(.png)</label> 
+                <input type="file" id="image" 
+                       name="image" value="" >
+                       <br><br>
+    <label>Blogger Name:</label><input name="author" type="text">
+    <br><br>
+    <label>Category:</label><input name="category" type="text">
+    <br><br>
+    <label>Day:</label><input name="day" type="text"> <label>Month:</label><input name="month" type="text"> <label>Year:</label><input name="year" type="text">  
+    <br><br>
+    <button type="submit">Create Blog</button></form>
+
+<br>
