@@ -8,11 +8,13 @@
 <form action="/blog" method="POST" enctype="multipart/form-data">
     <label>Title:</label><input name="title"type="text">
    <br><br> <p>Content:</p><textarea id="content" cols="86" rows ="20" name="content" placeholder="Add your content here....."></textarea>
-    <br><br><label for="image">Upload Image:(.png)</label> 
+    <br><br><label for="image">Upload Image: (Best Fit:750 X 300)</label> 
                 <input type="file" id="image" 
                        name="image" value="" >
                        <br><br>
-    <label>Blogger Name:</label><input name="author" type="text">
+                       <label>Image Type:</label>
+                       <select name="imgType"><option value='image/png'>.png</option><option value='image/jpeg'>.jpeg</option></select>
+    <br><br><label>Blogger Name:</label><input name="author" type="text">
     <br><br>
     <label>Category:</label><input name="category" type="text">
     <br><br>

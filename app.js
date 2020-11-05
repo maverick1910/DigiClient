@@ -15,10 +15,10 @@ var multer  = require('multer');
 var upload = multer({ dest: 'uploads/' });
 var fs = require('fs'); 
 var path = require('path'); 
-const MONGODB_URI="" // ADD YOUR CONNECTION STRING HERE
 
 
-mongoose.connect('mongodb://localhost:27017/gfg' /*Replace this with your local database*/ ||MONGODB_URI ,{
+
+mongoose.connect( /*Replace this with your local database'mongodb://localhost:27017/gfg'*/ process.env.MONGODB_URI ,{
     useNewUrlParser:true,
     useUnifiedTopology:true
 });
@@ -175,13 +175,13 @@ function checkNotAuthenticated(req, res, next) {
 var upload = multer({ storage: storage }); 
 
 app.post('/blog', upload.single('image'), (req, res, next) => { 
-  
+  console.log(req.body.imgType)
   var data = { 
       title: req.body.title, 
       content: req.body.content, 
       img: { 
           data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)), 
-          contentType: 'image/png'
+          contentType: req.body.imgType
       } ,
       author: req.body.author,
       category:req.body.category,
