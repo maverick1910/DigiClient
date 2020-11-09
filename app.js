@@ -1,6 +1,7 @@
 //if (process.env.NODE_ENV !== 'production') {
   //require('dotenv').config()
 //}
+var PORT= process.env.PORT || 3000
 const express = require('express')
 const app = express()
 const bcrypt = require('bcrypt')
@@ -204,6 +205,6 @@ app.post('/blog', upload.single('image'), (req, res, next) => {
 }); 
 
 
-app.listen(3000,console.log('server up'));
+app.listen(PORT,console.log('server up'));
 
 
