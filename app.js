@@ -1,6 +1,6 @@
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
+//if (process.env.NODE_ENV !== 'production') {
+  //require('dotenv').config()
+//}
 const express = require('express')
 const app = express()
 const bcrypt = require('bcrypt')
@@ -18,7 +18,7 @@ var path = require('path');
 
 
 
-mongoose.connect( /*Replace this with your local database'mongodb://localhost:27017/gfg'*/ process.env.MONGODB_URI ,{
+mongoose.connect( 'mongodb+srv://DigiClient:DigiClient@digiclient.6rbz3.mongodb.net/Blogs?retryWrites=true&w=majority' ,{
     useNewUrlParser:true,
     useUnifiedTopology:true
 });
@@ -36,9 +36,9 @@ const hash = bcrypt.hashSync('Jhon@1234', 10);
 const users = []
 users.push({
   id: Date.now().toString(),
-  name: process.env.NAME,
-  email: process.env.EMAIL,
-  password: hash,
+  name:'Jhon',
+  email:'Jhon@gmail.com',
+  password:'Jhon@1234',
 });
 
 
@@ -99,7 +99,7 @@ app.get('/contact',function(req,res){
 //Admin Authentication
 app.use(flash())
 app.use(session({
-  secret: process.env.SESSION_SECRET,
+  secret:'secret',
   resave: false,
   saveUninitialized: false
 }))
