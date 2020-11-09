@@ -68,7 +68,9 @@ app.get('/portfolio',function(req,res){
 });
 app.get('/single-blog',function(req,res){
     res.render('single-blog');
+  
 });
+
 
 //Please create a page where the user can add a blog naming it as admin 
 // Blog 
