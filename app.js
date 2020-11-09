@@ -32,7 +32,7 @@ initializePassport(
   email => users.find(user => user.email === email),
   id => users.find(user => user.id === id)
 )
-const hash = bcrypt.hashSync(process.env.PASSWORD, 10);
+const hash = bcrypt.hashSync('Jhon@1234', 10);
 const users = []
 users.push({
   id: Date.now().toString(),
