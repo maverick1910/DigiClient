@@ -39,7 +39,7 @@
         <!--================Header Menu Area =================-->
         <header class="main_menu_area">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#"><img src="" alt=""></a>
+                <a class="navbar-brand" href=""><img src="/public/img/Color logo png.png" alt="" style="width:40%;margin-right: -100px;"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
@@ -51,17 +51,7 @@
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item "><a class="nav-link" href="/about-us">About Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="/service">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/portfolio">Portfolio</a></li>
-                        <li class="nav-item dropdown submenu">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Blog
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/single-blog">Blog Details</a></li>
-                               
-                            </ul>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
                     </ul>
                 </div>
@@ -85,7 +75,7 @@
             <div class="container">
                 <div class="row">  
                     <div class="col-lg-9">  
-                        <% for(var log=0;log<(blog.length) ;log++){%>
+                        <!--<% for(var log=0;log<(blog.length) ;log++){%>
                         <div class="blog_main_inner">
                             <div class="blog_main_item">
                                 <div class="blog_img">
@@ -97,19 +87,21 @@
                                     </div>
                                 </div>
                                 <div class="blog_text">
-                                    <a href="single-blog.ejs"><h4><%= blog[log].title %></h4></a>
+                                    <a href="#"><h4><%= blog[log].title %></h4></a>
                                     <div class="blog_author">
                                         <a href="#"><%= blog[log].author %></a>
                                         <a href="#"><%= blog[log].category %></a>
                                     </div>
                                     <p><%= blog[log].content %> </p>
-                                    <a class="more_btn" href="#">Read More</a>
+                                    <a class="more_btn" href="">Read More</a>
                                 </div>
                             </div>
                         </div>
                         <br>
-                        <% } %>  
-                        <div class="blog_main_inner">
+                        <% } %> -->
+                        <h1>No new Blogs Yet</h1> 
+                        <!--- Sample Blog Template-->
+                        <!-- <div class="blog_main_inner">
                             <div class="blog_main_item">
                                 <div class="blog_img">
                                     <img class="img-fluid" src="img/blog/blog-1.jpg" alt="">
@@ -128,7 +120,7 @@
                                     <a class="more_btn" href="#">Read More</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-lg-3">
                         <div class="blog_right_sidebar">
@@ -151,31 +143,6 @@
                                     <li><a href="#">Article of the day</a></li>
                                 </ul>
                             </aside>
-                            <aside class="r_widget insta_widget">
-                                <div class="r_w_title">
-                                    <h3>Instagram</h3>
-                                </div>
-                                <ul>
-                                    <li><a href="https://www.instagram.com/?hl=en">
-                                        <img class="img-fluid" src="img/instagram/right-instagram/r-in-1.jpg" alt="">
-                                    </a></li>
-                                    <li><a href="https://www.instagram.com/?hl=en">
-                                        <img class="img-fluid" src="img/instagram/right-instagram/r-in-2.jpg" alt="">
-                                    </a></li>
-                                    <li><a href="https://www.instagram.com/?hl=en">
-                                        <img class="img-fluid" src="img/instagram/right-instagram/r-in-3.jpg" alt="">
-                                    </a></li>
-                                    <li><a href="https://www.instagram.com/?hl=en">
-                                        <img class="img-fluid" src="img/instagram/right-instagram/r-in-4.jpg" alt="">
-                                    </a></li>
-                                    <li><a href="https://www.instagram.com/?hl=en">
-                                        <img class="img-fluid" src="img/instagram/right-instagram/r-in-5.jpg" alt="">
-                                    </a></li>
-                                    <li><a href="https://www.instagram.com/?hl=en">
-                                        <img class="img-fluid" src="img/instagram/right-instagram/r-in-6.jpg" alt="">
-                                    </a></li>
-                                </ul>
-                            </aside>
                             <aside class="r_widget tag_widget">
                                 <div class="r_w_title">
                                     <h3>Tags</h3>
@@ -192,6 +159,8 @@
                         </div>
                     </div>
                 </div>
+                <!--Pagination example-->
+                <!--
                 <nav aria-label="Page navigation example" class="pagination_area">
                     <ul class="pagination">
                         <li class="page-item active"><a class="page-link" href="#">01.</a></li>
@@ -199,7 +168,7 @@
                         <li class="page-item"><a class="page-link" href="#">03.</a></li>
                         <li class="page-item"><a class="page-link" href="#">04.</a></li>
                     </ul>
-                </nav>
+                </nav>-->
             </div>
         </section>
         <!--================End Blog Main Area =================-->
@@ -211,7 +180,7 @@
                 <div class="container">
                     <div class="float-sm-left">
                         <h5>
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |  by <a href="https://colorlib.com" target="_blank">Webspft</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |  by <a href="" target="_blank">WEBSOFT TECH</a>
 </h5>
                     </div>
                     <div class="float-sm-right">

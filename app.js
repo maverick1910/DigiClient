@@ -1,6 +1,7 @@
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
+//if (process.env.NODE_ENV !== 'production') {
+  //require('dotenv').config()
+//}
+var PORT= process.env.PORT || 3000
 const express = require('express')
 const app = express()
 const bcrypt = require('bcrypt')
@@ -15,10 +16,10 @@ var multer  = require('multer');
 var upload = multer({ dest: 'uploads/' });
 var fs = require('fs'); 
 var path = require('path'); 
-const MONGODB_URI="" // ADD YOUR CONNECTION STRING HERE
 
 
-mongoose.connect('mongodb://localhost:27017/gfg' /*Replace this with your local database*/ ||MONGODB_URI ,{
+
+mongoose.connect( 'mongodb+srv://DigiClient:DigiClient@digiclient.6rbz3.mongodb.net/Blogs?retryWrites=true&w=majority' ,{
     useNewUrlParser:true,
     useUnifiedTopology:true
 });
@@ -32,13 +33,13 @@ initializePassport(
   email => users.find(user => user.email === email),
   id => users.find(user => user.id === id)
 )
-const hash = bcrypt.hashSync(process.env.PASSWORD, 10);
+const hash = bcrypt.hashSync('Jhon@1234', 10);
 const users = []
 users.push({
   id: Date.now().toString(),
-  name: process.env.NAME,
-  email: process.env.EMAIL,
-  password: hash,
+  name:'Jhon',
+  email:'Jhon@gmail.com',
+  password:'Jhon@1234',
 });
 
 
@@ -68,7 +69,9 @@ app.get('/portfolio',function(req,res){
 });
 app.get('/single-blog',function(req,res){
     res.render('single-blog');
+  
 });
+
 
 //Please create a page where the user can add a blog naming it as admin 
 // Blog 
@@ -97,7 +100,7 @@ app.get('/contact',function(req,res){
 //Admin Authentication
 app.use(flash())
 app.use(session({
-  secret: process.env.SESSION_SECRET,
+  secret:'secret',
   resave: false,
   saveUninitialized: false
 }))
@@ -175,13 +178,13 @@ function checkNotAuthenticated(req, res, next) {
 var upload = multer({ storage: storage }); 
 
 app.post('/blog', upload.single('image'), (req, res, next) => { 
-  
+  console.log(req.body.imgType)
   var data = { 
       title: req.body.title, 
       content: req.body.content, 
       img: { 
           data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)), 
-          contentType: 'image/png'
+          contentType: req.body.imgType
       } ,
       author: req.body.author,
       category:req.body.category,
@@ -202,6 +205,6 @@ app.post('/blog', upload.single('image'), (req, res, next) => {
 }); 
 
 
-app.listen(3000,console.log('server up'));
+app.listen(PORT,console.log('server up'));
 
 
