@@ -387,6 +387,14 @@ i:before {
 /*----------------------------------------------------*/
 /* Slider css
 ============================================================================================ */
+.dim{
+  width: 1200px;
+  height: 300px;
+}
+.dim1{
+  width: 300px;
+  height: 300px;
+}
 .main_slider_area {
   background: url(../img/home-slider/slider-bg-1.png) no-repeat scroll center center;
   background-size: cover;
@@ -2430,3 +2438,19 @@ i:before {
 /*---------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
+
+@media only screen and (max-width: 600px) {
+  .dim{
+    margin-left: 50px;
+    height: 200px;
+    width:200px
+  }
+  /* .dim1{
+    width:200px;
+    height: 200px;
+  } */
+  #content {display: none;}
+}
+@media only screen and (min-width:600px) {
+  #mycontent{display:none;}
+}
